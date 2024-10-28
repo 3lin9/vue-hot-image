@@ -1,0 +1,105 @@
+.hot-img-container{
+  position: relative;
+  width: 100%;
+  height: 100%;
+  img{
+    cursor: crosshair;
+  }
+    .hot-area{
+      position: absolute;
+      border: 1px solid #000;
+      background-color:rgb(210,105,30,.5);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: white;
+      text-align: center;
+      cursor: move;
+      .delete{
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 20px;
+        height: 20px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 2;
+        cursor: pointer;
+        &::before,&::after{
+          content: '';
+          position: absolute;
+          width: 16px;
+          height: 2px;
+          background-color: white; /* 线条颜色 */
+          border-radius: 15px;
+        }
+        
+        &::before{
+          transform: rotate(45deg); /* 形成 X */
+        }
+        &::after{
+          transform: rotate(-45deg);
+        }
+      }
+      .link-text{
+        
+      }
+      .tl,.tc,.tr,.ml,.mr,.bl,.bc,.br{
+        position: absolute;
+        width: 8px;
+        height: 8px;
+        background-color: aqua;
+      }
+      .tl{cursor: nw-resize;}
+      .tc{cursor: n-resize;}
+      .tr{cursor: ne-resize;}
+      .ml,.mr{cursor: w-resize;}
+      .bl{cursor: sw-resize;}
+      .bc{cursor: s-resize;}
+      .br{cursor: se-resize;}
+      .tl,.tc,.tr{
+        top: -4px;
+      }
+      .tl,.ml,.bl{
+        left: -4px;
+      }
+      .tc,.bc{
+        left: calc(50% - 4px);
+      }
+      .tr,.mr,.br{
+        right: -4px;
+      }
+      .ml,.mr{
+        top: calc(50% - 4px);
+      }
+      .bl,.bc,.br{
+        bottom: -4px;
+      }
+      ul{
+        position: absolute;
+        z-index: 1;
+        width: 100%;
+        height: 100%;
+      }
+      ul,li{
+        list-style: none;
+        user-select: none;
+        padding: 0;
+        margin: 0;
+      }
+    }
+    .item-active{
+      background-color: rgb(82, 47, 3, .7);
+    }
+  .canvas{
+    position: absolute;
+    border: 1px solid #000;
+    opacity: .5;
+    background-color: chartreuse;
+  }
+}
+img{
+  width: 100%;
+  vertical-align: middle;
+}
