@@ -1,16 +1,16 @@
 {
-  "name": "vue-hot-zone",
-  "version": "1.0.0",
+  "name": "vue-hot-image",
+  "version": "1.0.1",
   "type": "module",
   "author": "3lin9",
   "keywords": [
-    "vue-hot-zone",
+    "vue-hot-image",
     "vue热区图",
     "chowsangsang",
     "chowsangsang-ui"
   ],
-  "main": "dist/vue-hot-zone.umd.js",
-  "module": "dist/vue-hot-zone.es.js",
+  "main": "dist/vue-hot-image.umd.js",
+  "module": "dist/vue-hot-image.es.js",
   "files": [
     "dist"
   ],

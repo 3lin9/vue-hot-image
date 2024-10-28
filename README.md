@@ -1,4 +1,4 @@
-# vue-hot-zone
+# vue-hot-image
 基于vue3开发的热区组件，可创建区域，调整大小，可拖拽
 
 ## 特性
@@ -9,12 +9,12 @@
 - 支持自定义样式
 ## 安装
   ```bash
-  npm i vue-hot-zone
+  npm i vue-hot-image
   ```
 ## 使用
-import VueHotZone from 'vue-hot-zone';
+import VueHotImage from 'vue-hot-image';
 
-    <vue-hot-zone 
+    <vue-hot-image
       v-model="data" // 绑定数据
       :url="url"  // 图片地址
       @add=""
