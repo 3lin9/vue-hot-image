@@ -23,6 +23,8 @@
    </div>
 </template>
 <script setup>
+import vMove from '../directives/move';
+import vResize from '../directives/resize';
 const emit = defineEmits([ 'update','delete'])
 const props = defineProps({
   item: {},
