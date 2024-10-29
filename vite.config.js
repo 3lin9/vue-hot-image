@@ -1,13 +1,14 @@
 import { defineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
-
+import cssInjectedByJsPlugin from 'vite-plugin-css-injected-by-js'
 // https://vitejs.dev/config/
 export default defineConfig({
   server: {
     port: 5174
   },
-  plugins: [vue()],
+  plugins: [vue(),cssInjectedByJsPlugin({topExecutionPriority: false})],
   build: {
+    cssCodeSplit: false,
     lib: {
       entry: 'src/index.js', // 入口文件  
       name: 'vue-hot-image', // 打包后的库名  
