@@ -2,6 +2,7 @@ export default {
   mounted(el, binding) {
     let startX, startY, initialLeft, initialTop;
     const parent = el.parentElement; // 获取父元素
+    const borderLimit = 4
     const canvas = parent.querySelector('.canvas'); // 获取 class 为 canvas 的 div
     // 获取父元素的滚动位置修正
     const getScrollOffset = () => {
@@ -44,11 +45,13 @@ export default {
       let newHeight = Math.abs(moveY);
       
       if(initialLeft + newWidth > parentBounds.width){ // 右
-        newWidth = parentBounds.width - initialLeft - 8; // 减去8px的缩放按钮
+        newWidth = parentBounds.width - initialLeft - borderLimit; // 减去8px的缩放按钮
       }
       if(initialTop + newHeight > parentBounds.height) { //下
-        newHeight = parentBounds.height - initialTop;
+        newHeight = parentBounds.height - initialTop - borderLimit;
       }
+      //左上（反向画的时候）
+
       // 设置 canvas 的宽高
       canvas.style.width = `${newWidth}px`;
       canvas.style.height = `${newHeight}px`;

@@ -17,6 +17,14 @@ const props = defineProps({
     type: Array,
     required: true
   },
+  option: {
+    type: Object,
+    default: {
+      minLimit: 50,  //最小区域限制
+      color: '',
+      actveBgColor: ''
+    }
+  },
   url: {
     type: String,
     required: true

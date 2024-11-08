@@ -31,7 +31,6 @@ const props = defineProps({
   index: Number
 })
 const onMove = (position) => {
-  console.log("元素的新位置：", position);
   emit('update', position, props.index)
 };
 const onResize = (position) => {

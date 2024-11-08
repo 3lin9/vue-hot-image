@@ -2,6 +2,7 @@ export default {
   mounted(el, binding) {
     let isDragging = false;
     let startX, startY, initialLeft, initialTop;
+    const borderLimit = 4
     // 获取图片的边界限制
     const getParentBounds = () => {
       return el.parentElement.querySelector('.img-canvas').getBoundingClientRect();
@@ -22,21 +23,14 @@ export default {
       const moveX = evt.clientX - startX;
       const moveY = evt.clientY - startY;
       // 边界检查
-      let newLeft = initialLeft + moveX;
-      let newTop = initialTop + moveY;
-      if(newLeft <= 0) { // 左
-        newLeft = 4
-      }
-      if(newTop <= 0) { // 上
-        newTop = 4
-      }
-      // debugger
+      let newLeft = Math.max(borderLimit, initialLeft + moveX);// 左
+      let newTop = Math.max(borderLimit, initialTop + moveY); // 上
       const parentBounds = getParentBounds();
       if(newLeft + el.clientWidth > parentBounds.width){ // 右
-        newLeft = parentBounds.width - el.clientWidth - 4
+        newLeft = parentBounds.width - el.clientWidth - borderLimit
       }
       if(newTop + el.clientHeight > parentBounds.height){ // 下
-        newTop = parentBounds.height - el.clientHeight - 4
+        newTop = parentBounds.height - el.clientHeight - borderLimit
       }
       el.style.left = `${newLeft}px`;
       el.style.top = `${newTop}px`;
